@@ -14,7 +14,7 @@ const Player = () => {
   return (
     <>
         <div>Player</div>
-        <ReactSimplifiedPlayer mainColor="#ff6800" song={QueueType} />
+        <ReactSimplifiedPlayer mainColor="#ff8400" song={QueueType} />
         <div>Player end</div>
 
     </>
