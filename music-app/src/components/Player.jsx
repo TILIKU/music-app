@@ -1,21 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import { ReactSimplifiedPlayer } from "react-simplified-player"
 
+import Search from './search'
+
 import { useGetSongQuery } from '../services/songAPi'
 
 const Player = () => {
-  const [searchWord, setsearchWord] = useState("cock")
+  
+  const [searchWord, setsearchWord] = useState("selfless")
   const [updated, setUpdated] = useState(searchWord)
+  
+  const {data:song, isFetching} = useGetSongQuery(updated)
 
-  const {data:song, isFetching} = useGetSongQuery(searchWord)
-
-
-
- 
   const buttonClicked = () => {
     setUpdated(searchWord)
   }
-
+ 
   console.log(song)
 
   const QueueType = {
@@ -27,10 +27,12 @@ const Player = () => {
   }
   return (
     <>
-        <div>Player</div>
+      <div>Player</div>
 
-        
-        <input 
+      <Search updated={updated} />
+
+
+      <input 
           value={searchWord} 
           onChange={(e) => {setsearchWord(e.target.value)}}
           style={{height:"50px"}}
@@ -42,6 +44,9 @@ const Player = () => {
           cum
         </button>
         <h1>{searchWord}</h1>
+        <h1>{updated}</h1>
+
+        
         <ReactSimplifiedPlayer mainColor="#ff8400" song={QueueType} />
         <div>Player end</div>
 
