@@ -10,7 +10,8 @@ const Player = () => {
   const [searchWord, setsearchWord] = useState("selfless")
   const [updated, setUpdated] = useState(searchWord)
   
-  const {data:song, isFetching} = useGetSongQuery(updated)
+
+    const {data:song, isFetching} = useGetSongQuery(updated)
 
   const buttonClicked = () => {
     setUpdated(searchWord)
