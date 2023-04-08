@@ -1,37 +1,40 @@
 import React, {useState, useEffect} from 'react'
 import { ReactSimplifiedPlayer } from "react-simplified-player"
 
-import Search from './search'
 
 import { useGetSongQuery } from '../services/songAPi'
+import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 
 const Player = () => {
   
   const [searchWord, setsearchWord] = useState("selfless")
   const [updated, setUpdated] = useState(searchWord)
   
+  const {data:searchArr, isFetching} = useGetSongQuery(updated)
 
-    const {data:song, isFetching} = useGetSongQuery(updated)
+ 
+
+  useEffect(() => {
+    const QueueType = {
+      song_cover: "string",
+      song_title: searchArr?.data?.[0]?.title.toString(),
+      id: searchArr?.data?.[0]?.id.toString(),
+      song_artist: "string",
+      url: "string",
+    }
+  }, [updated])
+   if(isFetching) return "loading..."
 
   const buttonClicked = () => {
     setUpdated(searchWord)
   }
  
-  console.log(song)
+  console.log(searchArr)
 
-  const QueueType = {
-    song_cover: "string",
-    song_title: "string",
-    id: "string",
-    song_artist: "string",
-    url: "string",
-  }
+  
   return (
     <>
       <div>Player</div>
-
-      <Search updated={updated} />
-
 
       <input 
           value={searchWord} 
@@ -46,9 +49,17 @@ const Player = () => {
         </button>
         <h1>{searchWord}</h1>
         <h1>{updated}</h1>
-
         
-        <ReactSimplifiedPlayer mainColor="#ff8400" song={QueueType} />
+        <ReactSimplifiedPlayer 
+        mainColor="#ff8400" 
+        song={
+          {song_cover: searchArr?.data?.[0]?.album?.cover.toString(),
+          song_title: searchArr?.data?.[0]?.title.toString(),
+          id: searchArr?.data?.[0]?.id.toString(),
+          song_artist: searchArr?.data?.[0]?.artist?.name.toString(),
+          url: searchArr?.data?.[0]?.link.toString(),}
+        } 
+        />
         <div>Player end</div>
 
     </>
