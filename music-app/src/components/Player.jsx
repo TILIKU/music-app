@@ -30,6 +30,7 @@ const Player = () => {
   }
  
   console.log(searchArr)
+  console.log(searchArr?.data?.[0]?.link.toString())
 
   
   return (
