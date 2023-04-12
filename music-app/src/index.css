@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.control-btn svg path {
+  fill: #000;
+}
 
 a {
   font-weight: 500;

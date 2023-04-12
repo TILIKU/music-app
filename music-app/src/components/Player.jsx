@@ -54,12 +54,13 @@ const Player = () => {
         <ReactSimplifiedPlayer 
         mainColor="#ff8400" 
         song={
-          {song_cover: searchArr?.data?.[0]?.album?.cover.toString(),
-          song_title: searchArr?.data?.[0]?.title.toString(),
-          id: searchArr?.data?.[0]?.id.toString(),
-          song_artist: searchArr?.data?.[0]?.artist?.name.toString(),
-          url: searchArr?.data?.[0]?.link.toString(),}
+          {song_cover: searchArr?.data?.[0]?.album?.cover.toString() || "",
+          song_title: searchArr?.data?.[0]?.title.toString() || "",
+          id: searchArr?.data?.[0]?.id.toString() || "",
+          song_artist: searchArr?.data?.[0]?.artist?.name.toString() || "",
+          url: searchArr?.data?.[0]?.preview.toString() || "",}
         } 
+        showQueue
         />
         <div>Player end</div>
 
