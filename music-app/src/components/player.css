@@ -1,6 +1,11 @@
 h2{grid-area:h2}
 h3{grid-area:h3}
-img{grid-area:image}
+img{
+    grid-area:image;
+    height: 80px;
+    width: 80px;
+    border-radius: 6px;
+}
 button{grid-area:button}
 .card{
     width:13rem;
