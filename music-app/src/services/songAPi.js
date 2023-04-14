@@ -10,7 +10,7 @@ export const getSong = createApi({
     baseQuery: fetchBaseQuery({baseUrl}),
     endpoints:(builder) =>({
         getSong:builder.query({
-            query: (musicTitle) => createRequest(baseUrl.concat(`?q=${musicTitle}`))
+            query: (musicTitle) => createRequest(baseUrl.concat(`?q=${musicTitle}&index=12`))
         }),
     })
 })

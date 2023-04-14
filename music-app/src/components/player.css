@@ -1,0 +1,23 @@
+h2{grid-area:h2}
+h3{grid-area:h3}
+img{grid-area:image}
+button{grid-area:button}
+.card{
+    width:13rem;
+    height:10rem;
+    background-color: #3b3b3b;
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    font-size: 0.6rem;
+    display:grid;
+    grid-template-areas:
+    'image h2 h2'
+    'image h3 h3'
+    'button button button ';
+}
+.card-container{
+    display:grid;
+    grid-template-columns: 15rem 15rem 15rem 15rem 15rem;
+    row-gap: 8px;
+} 
+
