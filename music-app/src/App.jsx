@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div className="App">
-     <h1> GAMERS </h1>
      <Player />
     
     </div>

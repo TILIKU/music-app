@@ -1,12 +1,21 @@
 h2{grid-area:h2}
-h3{grid-area:h3}
+h3{
+    grid-area:h3;
+    opacity: 0.5;
+}
 img{
     grid-area:image;
     height: 80px;
     width: 80px;
     border-radius: 6px;
 }
-button{grid-area:button}
+button{
+    grid-area:button;
+    font-size:2rem;
+}
+h2,h3,img,button{
+    
+}
 .card{
     width:13rem;
     height:10rem;
@@ -15,6 +24,7 @@ button{grid-area:button}
     overflow: hidden;
     font-size: 0.6rem;
     display:grid;
+    padding: 0.8rem;
     grid-template-areas:
     'image h2 h2'
     'image h3 h3'
