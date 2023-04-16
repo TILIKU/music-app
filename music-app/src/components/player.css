@@ -14,13 +14,14 @@ button{
     font-size:2rem;
 }
 h2,h3,img,button{
-    
+    overflow: hidden;
 }
 .card{
     width:13rem;
     height:10rem;
     background-color: #3b3b3b;
     border: 1px solid #d9d9d9;
+    border-radius: 10px;
     overflow: hidden;
     font-size: 0.6rem;
     display:grid;
@@ -33,6 +34,60 @@ h2,h3,img,button{
 .card-container{
     display:grid;
     grid-template-columns: 15rem 15rem 15rem 15rem 15rem;
-    row-gap: 8px;
+    row-gap: 14px;
+    justify-content: center;
 } 
+.player-container{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;    
+}
 
+.search-container{
+    margin: 20px 0;
+    width: 100wh;
+}
+input{
+    padding-left: 10px;
+    border-radius: 50px;
+}
+
+.select-song-button{
+    border-radius: 50px;
+}
+
+.search-button{
+    width: 30px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 20px;
+    position: relative;
+    top: 5px;
+    background-image: url("../assets/search-icon.png");
+    background-size: 20px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 2px solid #3b3b3b;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-container{
+        grid-template-columns: 15rem 15rem 15rem 15rem;
+    }
+    .player-container{
+        top:25%;
+
+    }
+    
+  }
+  @media only screen and (max-width: 950px) {
+    .card-container{
+        grid-template-columns: 15rem 15rem 15rem;
+    }
+    .player-container{
+        top:50%;
+    }
+  }

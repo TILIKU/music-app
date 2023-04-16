@@ -45,34 +45,38 @@ const Player = () => {
 
   return (
     <>
+    <div className='search-container'>
+      <input 
+        value={searchWord} 
+        onChange={(e) => {setsearchWord(e.target.value)}}
+        style={{height:"50px"}}
+      />
+      <button 
+        onClick={searchButtonClicked} 
+        className='search-button'
+      >
+        
+      </button>
+    </div>
       <div className='card-container'>
         {searchArr?.map((song) => (
           <div className='card' key={song.id} id={song.id}>
             <h2>{song?.title}</h2>
             <h3>{song?.artist?.name}</h3>
             <img src={song?.album?.cover}></img>
-            <button onClick={() => chosenSongButtonClicked(searchArr.indexOf(song))}>play</button>
+            <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchArr.indexOf(song))}>play</button>
           </div>
         ))}
       </div>
 
-      <input 
-          value={searchWord} 
-          onChange={(e) => {setsearchWord(e.target.value)}}
-          style={{height:"50px"}}
-        />
-        <button 
-          onClick={searchButtonClicked} 
-          style={{width:"100px", height:"50px"}}
-        >
-          cum
-        </button>
-        
-        <ReactSimplifiedPlayer 
-        mainColor="#ff8400" 
-        song={playerSong} 
-        showQueue
-        />
+      
+        <div className='player-container'>
+          <ReactSimplifiedPlayer 
+          mainColor="#ff8400" 
+          song={playerSong} 
+          showQueue
+          />
+        </div>
     </>
   )
 }
