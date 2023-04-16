@@ -30,10 +30,9 @@ const Player = () => {
     setsearchArr(searchObj?.data?.slice(0,15))
   }
   const chosenSongButtonClicked = (id) => {
-    console.log(id)
     setplayerSong(
       {song_cover: searchArr?.[id]?.album?.cover.toString() || "",
-       song_title: searchArr?.[id]?.title.toString() || "",
+       song_title: searchArr?.[id]?.title_short.toString() || "",
        id: searchArr?.[id]?.id.toString() || "",
        song_artist: searchArr?.[id]?.artist?.name.toString() || "",
        url: searchArr?.[id]?.preview.toString() || "",}
@@ -41,7 +40,7 @@ const Player = () => {
       
   }
   
-
+  console.log(searchArr)
 
   return (
     <>
