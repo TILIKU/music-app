@@ -20,7 +20,7 @@ h2,h3,img,button{
     width:15rem;
     height:10rem;
     background-color: #3b3b3b;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #505050;
     border-radius: 10px;
     overflow: hidden;
     font-size: 0.6rem;
@@ -54,12 +54,18 @@ h2,h3,img,button{
 input{
     padding-left: 10px;
     border-radius: 50px;
+    height: 2.5rem;
+    box-sizing: unset;
+    border: 2px solid #3b3b3b;
 }
 
 .select-song-button{
     border-radius: 50px;
 }
 
+.select-song-button:hover{
+    border-color: #c3bfbf;
+}
 .search-button{
     width: 30px;
     height: 40px;
@@ -71,7 +77,10 @@ input{
     background-size: 20px;
     background-position: 50%;
     background-repeat: no-repeat;
-    border: 2px solid #3b3b3b;
+    border: 1px solid #a1a1a133;
+}
+.search-button:hover{
+    border: 1px solid #fffffffb;
 }
 
 @media only screen and (max-width: 1200px) {

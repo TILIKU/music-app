@@ -29,11 +29,11 @@ const Player = () => {
   }
   const chosenSongButtonClicked = (id) => {
     setplayerSong(
-      {song_cover: searchArr?.[id]?.album?.cover.toString() || "",
-       song_title: searchArr?.[id]?.title_short.toString() || "",
-       id: searchArr?.[id]?.id.toString() || "",
-       song_artist: searchArr?.[id]?.artist?.name.toString() || "",
-       url: searchArr?.[id]?.preview.toString() || "",}
+      {song_cover: searchObj?.data?.[id]?.album?.cover.toString() || "",
+       song_title: searchObj?.data?.[id]?.title_short.toString() || "",
+       id: searchObj?.data?.[id]?.id.toString() || "",
+       song_artist: searchObj?.data?.[id]?.artist?.name.toString() || "",
+       url: searchObj?.data?.[id]?.preview.toString() || "",}
     )
       
   }
@@ -46,7 +46,6 @@ const Player = () => {
       <input 
         value={searchWord} 
         onChange={(e) => {setsearchWord(e.target.value)}}
-        style={{height:"50px"}}
       />
       <button
         type='submit'  
@@ -61,7 +60,7 @@ const Player = () => {
             <h2>{song?.title}</h2>
             <h3>{song?.artist?.name}</h3>
             <img src={song?.album?.cover}></img>
-            <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchArr.indexOf(song))}>play</button>
+            <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}>play</button>
           </div>
         ))}
       </div>
