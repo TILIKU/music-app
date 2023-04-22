@@ -7,12 +7,11 @@ import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 
 const Player = () => {
   
-  const [searchWord, setsearchWord] = useState("selfless")
+  const [searchWord, setsearchWord] = useState("")
   const [updated, setUpdated] = useState(searchWord)
   
 
   const {data:searchObj, isFetching} = useGetSongQuery(updated)
-  const [searchArr, setsearchArr] = useState(searchObj?.data)
 
   const [playerSong, setplayerSong] = useState({song_cover: searchObj?.data?.[0]?.album?.cover.toString() || "",
                                                 song_title: searchObj?.data?.[0]?.title.toString() || "",
@@ -27,7 +26,6 @@ const Player = () => {
 
   const searchButtonClicked = () =>{
     setUpdated(searchWord)
-    setsearchArr(searchObj?.data?.slice(0,15))
   }
   const chosenSongButtonClicked = (id) => {
     setplayerSong(
@@ -40,25 +38,25 @@ const Player = () => {
       
   }
   
-  console.log(searchArr)
 
   return (
     <>
     <div className='search-container'>
+      <form onSubmit={searchButtonClicked}>
       <input 
         value={searchWord} 
         onChange={(e) => {setsearchWord(e.target.value)}}
         style={{height:"50px"}}
       />
-      <button 
-        onClick={searchButtonClicked} 
+      <button
+        type='submit'  
         className='search-button'
-      >
-        
+      > 
       </button>
+      </form>
     </div>
       <div className='card-container'>
-        {searchArr?.map((song) => (
+        {searchObj?.data?.slice(0,15)?.map((song) => (
           <div className='card' key={song.id} id={song.id}>
             <h2>{song?.title}</h2>
             <h3>{song?.artist?.name}</h3>
