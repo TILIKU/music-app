@@ -7,10 +7,23 @@ const createRequest = (url) => ({url})
 
 export const getSong = createApi({
     reducerPath: "getSong",
-    baseQuery: fetchBaseQuery({baseUrl}),
+    baseQuery: fetchBaseQuery({
+        baseUrl,
+    //     // crendentials: "include" will face CORS if credential is not provided
+    // credentials: "same-origin", 
+    // prepareHeaders: (headers) => {
+    //     const accessToken = localStorage.getItem("token");
+    //     if (accessToken) {
+    //         headers.set("authorization", `Bearer ${accessToken}`);
+    //         headers.set("Content-Type", "application/json");
+    //     }
+
+    //     return headers;
+    // },
+    }),
     endpoints:(builder) =>({
         getSong:builder.query({
-            query: (musicTitle) => createRequest(baseUrl.concat(`?q=${musicTitle}`))
+            query: (musicTitle) => createRequest(`http://localhost:3001/${musicTitle}`)
         }),
     })
 })

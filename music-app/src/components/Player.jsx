@@ -25,7 +25,7 @@ const Player = () => {
   if(isFetching) return "loading..."
 
   const searchButtonClicked = () =>{
-    setUpdated(searchWord)
+    setUpdated("music/" + searchWord)
   }
   const chosenSongButtonClicked = (id) => {
     setplayerSong(
@@ -46,6 +46,7 @@ const Player = () => {
       <input 
         value={searchWord} 
         onChange={(e) => {setsearchWord(e.target.value)}}
+        placeholder='Search'
       />
       <button
         type='submit'  
