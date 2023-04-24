@@ -25,7 +25,7 @@ const Player = () => {
   if(isFetching) return "loading..."
 
   const searchButtonClicked = () =>{
-    setUpdated(searchWord)
+    setUpdated("music/" + searchWord)
   }
   const chosenSongButtonClicked = (id) => {
     setplayerSong(
