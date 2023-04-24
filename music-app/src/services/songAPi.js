@@ -30,7 +30,7 @@ export const getSong = createApi({
     }),
     endpoints:(builder) =>({
         getSong:builder.query({
-            query: (musicTitle) => createRequest(`https://localhost:3001/music/${musicTitle}`)
+            query: (musicTitle) => createRequest(`http://localhost:3001/music/${musicTitle}`)
         }),
     })
 })
