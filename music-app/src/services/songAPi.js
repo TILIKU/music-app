@@ -20,10 +20,17 @@ export const getSong = createApi({
 
     //     return headers;
     // },
+
+
+    // mode: "cors",
+    // prepareHeaders: (headers, { getState }) => {
+    //     headers.set('Access-Control-Allow-Origin', '*')
+    //     return headers
+    // }
     }),
     endpoints:(builder) =>({
         getSong:builder.query({
-            query: (musicTitle) => createRequest(`http://localhost:3001/${musicTitle}`)
+            query: (musicTitle) => createRequest(`https://api.deezer.com/search?q=${musicTitle}`)
         }),
     })
 })
