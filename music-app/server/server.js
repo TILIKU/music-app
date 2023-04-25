@@ -19,8 +19,9 @@ app.listen(PORT, () => {
 });
 
 
-app.use("/music",(req, res) => {
-    request(`https://api.deezer.com/search?q=${req.path}`, (error, response, body) => {
+
+app.use("/",(req, res) => {
+    request(`https://api.deezer.com/search?q=${req.path.slice(1)}`, (error, response, body) => {
         res.send(body)
     })
 })

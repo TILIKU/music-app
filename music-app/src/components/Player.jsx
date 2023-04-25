@@ -24,8 +24,11 @@ const Player = () => {
 
   if(isFetching) return "loading..."
 
-  const searchButtonClicked = () =>{
-    setUpdated("music/" + searchWord)
+  const searchButtonClicked = (event) =>{
+    setUpdated(
+      // "music/" + 
+      searchWord)
+      event.preventDefault()
   }
   const chosenSongButtonClicked = (id) => {
     setplayerSong(
@@ -37,7 +40,7 @@ const Player = () => {
     )
       
   }
-  
+  console.log(updated)
 
   return (
     <>
@@ -71,7 +74,6 @@ const Player = () => {
           <ReactSimplifiedPlayer 
           mainColor="#ff8400" 
           song={playerSong} 
-          showQueue
           />
         </div>
     </>
