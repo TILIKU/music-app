@@ -5,9 +5,11 @@ h3{
 }
 img{
     grid-area:image;
-    height: 80px;
-    width: 80px;
+    min-height: 13rem;
+    min-width: 13rem;
     border-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
 }
 button{
     grid-area:button;
@@ -16,10 +18,18 @@ button{
 h2,h3,img,button{
     overflow: hidden;
 }
+
+.card-container{
+    display:grid;
+    grid-template-columns: 20rem 20rem 20rem;
+    row-gap: 14px;
+    column-gap: 12px;
+    justify-content: center;
+} 
 .card{
-    width:15rem;
-    height:10rem;
-    background-color: #3b3b3b;
+    width:17rem;
+    height:25rem;
+    background-color: #726e6e30;
     border: 1px solid #505050;
     border-radius: 10px;
     overflow: hidden;
@@ -27,17 +37,14 @@ h2,h3,img,button{
     display:grid;
     padding: 0.8rem;
     grid-template-areas:
-    'image h2 h2'
-    'image h3 h3'
-    'button button button ';
+    'image image '
+    'h3 h3 '
+    'h2 h2 '
+    'button button  ';
 }
-.card-container{
-    display:grid;
-    grid-template-columns: 15rem 15rem 15rem 15rem 15rem;
-    row-gap: 14px;
-    column-gap: 12px;
-    justify-content: center;
-} 
+.card:hover{
+    border: 1px solid #ff6600c9;
+}
 .player-container{
     width: 100%;
     position: absolute;
@@ -73,10 +80,11 @@ input{
     margin-left: 20px;
     position: relative;
     top: 5px;
-    background-image: url("../assets/search-icon.png");
+    background-image: url("../assets/search-icon-white.png");
     background-size: 20px;
     background-position: 50%;
     background-repeat: no-repeat;
+    color: white;
     border: 1px solid #a1a1a133;
 }
 .search-button:hover{
@@ -85,7 +93,7 @@ input{
 
 @media only screen and (max-width: 1200px) {
     .card-container{
-        grid-template-columns: 15rem 15rem 15rem 15rem;
+        grid-template-columns: 20rem 20rem 20rem ;
     }
     .player-container{
         top:25%;
