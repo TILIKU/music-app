@@ -64,11 +64,11 @@ const Player = () => {
             <h2>{song?.title}</h2>
             <h3>{song?.artist?.name}</h3>
             <img src={song?.album?.cover_medium}></img>
-            <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}>play</button>
+            <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
           </div>
         ))}
       </div>
-
+         
       
         <div className='player-container'>
           <ReactSimplifiedPlayer 

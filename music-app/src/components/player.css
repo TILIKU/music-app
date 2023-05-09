@@ -67,7 +67,17 @@ input{
 }
 
 .select-song-button{
-    border-radius: 50px;
+    border-radius:50%;
+    max-width:40px ;
+    height: 40px;
+    font-size: 1.5rem;
+    padding: 0;
+    background-image: url("../assets/play-icon-2-2-2.png");
+    background-size: 20px;
+    background-position: 60%;
+    background-repeat: no-repeat;
+    margin-left: 40%;
+
 }
 
 .select-song-button:hover{
@@ -89,6 +99,29 @@ input{
 }
 .search-button:hover{
     border: 1px solid #fffffffb;
+}
+
+.card{
+    --border-color: #ff6600c9; /* the border color */
+    --border-thickness: 2px;    /* the border thickness*/
+    --gap: 5px;     /* the gap on hover */
+  
+    padding: calc(var(--gap) + var(--border-thickness));
+    --_g: #0000 25%,var(--border-color) 0;
+    background: 
+        conic-gradient(from 180deg at top    var(--border-thickness) right var(--border-thickness),var(--_g))
+
+            var(--_i,200%) 0  /200% var(--_i,var(--border-thickness))  no-repeat,
+
+        conic-gradient(            at bottom var(--border-thickness) left  var(--border-thickness),var(--_g))
+
+            0   var(--_i,200%)      /var(--_i,var(--border-thickness)) 200%  no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+}
+.card:hover{
+    --_i: 100%;
+  transition: .3s, background-size .3s .3s;
 }
 
 @media only screen and (max-width: 1200px) {
