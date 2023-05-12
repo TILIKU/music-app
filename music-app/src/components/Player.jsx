@@ -59,11 +59,11 @@ const Player = () => {
       </form>
     </div>
       <div className='card-container'>
-        {searchObj?.data?.slice(0,3)?.map((song) => (
+        {searchObj?.data?.slice(0,10)?.map((song) => (
           <div className='card' key={song.id} id={song.id}>
+            <img src={song?.album?.cover_medium}></img>
             <h2>{song?.title}</h2>
             <h3>{song?.artist?.name}</h3>
-            <img src={song?.album?.cover_medium}></img>
             <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
           </div>
         ))}

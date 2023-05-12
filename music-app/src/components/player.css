@@ -19,31 +19,38 @@ h2,h3,img,button{
     overflow: hidden;
 }
 
-.card-container{
+/* .card-container{
     display:grid;
     grid-template-columns: 20rem 20rem 20rem;
     row-gap: 14px;
     column-gap: 12px;
     justify-content: center;
-} 
+}  */
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow: auto;
+}
 .card{
-    width:17rem;
+     
+    
     height:25rem;
     background-color: #726e6e30;
     border: 1px solid #505050;
     border-radius: 10px;
-    overflow: hidden;
+    overflow:visible;
     font-size: 0.6rem;
-    display:grid;
+    display:flex;
     padding: 0.8rem;
-    grid-template-areas:
-    'image image '
-    'h3 h3 '
-    'h2 h2 '
-    'button button  ';
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .card:hover{
     border: 1px solid #ff6600c9;
+    z-index: 2;
 }
 .player-container{
     width: 100%;
@@ -68,16 +75,15 @@ input{
 
 .select-song-button{
     border-radius:50%;
-    max-width:40px ;
+    width:40px ;
     height: 40px;
     font-size: 1.5rem;
     padding: 0;
     background-image: url("../assets/play-icon-2-2-2.png");
     background-size: 15px;
-    background-position: 58%;
+    background-position: 56%;
     background-repeat: no-repeat;
-    margin-left: 40%;
-
+    margin-top: 20px;
 }
 
 .select-song-button:hover{
@@ -125,9 +131,9 @@ input{
 }
 
 @media only screen and (max-width: 1200px) {
-    .card-container{
+    /* .card-container{
         grid-template-columns: 20rem 20rem 20rem ;
-    }
+    } */
     .player-container{
         top:25%;
 
@@ -135,9 +141,9 @@ input{
     
   }
   @media only screen and (max-width: 950px) {
-    .card-container{
+    /* .card-container{
         grid-template-columns: 15rem 15rem 15rem;
-    }
+    } */
     .player-container{
         top:50%;
     }
