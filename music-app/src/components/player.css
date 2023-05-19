@@ -47,6 +47,8 @@ h2,h3,img,button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    position: absolute;
 }
 .card:hover{
     border: 1px solid #ff6600c9;

@@ -60,7 +60,7 @@ const Player = () => {
     </div>
       <div className='card-container'>
         {searchObj?.data?.slice(0,10)?.map((song) => (
-          <div className='card' key={song.id} id={song.id}>
+          <div className='card' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`}}>
             <img src={song?.album?.cover_medium}></img>
             <h2>{song?.title}</h2>
             <h3>{song?.artist?.name}</h3>
