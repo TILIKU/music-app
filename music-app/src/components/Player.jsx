@@ -32,7 +32,7 @@ const Player = () => {
   }
   const chosenSongButtonClicked = (id) => {
     setplayerSong(
-      {song_cover: searchObj?.data?.[id]?.album?.cover.toString() || "",
+      {song_cover: searchObj?.data?.[id]?.album?.cover_big.toString() || "",
        song_title: searchObj?.data?.[id]?.title_short.toString() || "",
        id: searchObj?.data?.[id]?.id.toString() || "",
        song_artist: searchObj?.data?.[id]?.artist?.name.toString() || "",
@@ -64,7 +64,7 @@ const Player = () => {
               <div className='card-background'>
               <img src={song?.album?.cover_medium}></img>
               <h2>{song?.title}</h2>
-              <h3>{song?.artist?.name}</h3>
+              <h3>{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
               <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
             </div>
           </div>

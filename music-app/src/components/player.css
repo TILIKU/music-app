@@ -2,6 +2,7 @@ h2{grid-area:h2}
 h3{
     grid-area:h3;
     opacity: 0.5;
+    overflow: hidden;
 }
 img{
     grid-area:image;
@@ -93,7 +94,7 @@ input{
     
     height:25rem;
     background-color: #726e6e30;
-    border: 1px solid #505050;
+    /* border: 1px double #ff6600c9; */
     border-radius: 10px;
     overflow:visible;
     font-size: 0.6rem;
@@ -111,8 +112,8 @@ input{
 }
 .card{
     --border-color: #ff6600c9; /* the border color */
-    --border-thickness: 2px;    /* the border thickness*/
-    --gap: 5px;     /* the gap on hover */
+    --border-thickness: 5px;    /* the border thickness*/
+    --gap: 0.5px;     /* the gap on hover */
   
     padding: calc(var(--gap) + var(--border-thickness));
     --_g: #0000 25%,var(--border-color) 0;
@@ -126,6 +127,8 @@ input{
             0   var(--_i,200%)      /var(--_i,var(--border-thickness)) 200%  no-repeat;
     transition: .3s, background-position .3s .3s;
     cursor: pointer;
+
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .card:hover{
     --_i: 100%;
@@ -142,10 +145,10 @@ input{
     z-index: 100;
 }
 
-@media only screen and (max-width: 1200px) {
-    /* .card-container{
+/* @media only screen and (max-width: 1200px) {
+    .card-container{
         grid-template-columns: 20rem 20rem 20rem ;
-    } */
+    }
     .player-container{
         top:25%;
 
@@ -153,10 +156,10 @@ input{
     
   }
   @media only screen and (max-width: 950px) {
-    /* .card-container{
+    .card-container{
         grid-template-columns: 15rem 15rem 15rem;
-    } */
+    }
     .player-container{
         top:50%;
     }
-  }
+  } */

@@ -1,34 +1,21 @@
 {
-  "name": "music-app",
-  "private": true,
-  "version": "0.0.0",
-  "proxy": "http://localhost:3001",
+  "name": "tiliku-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
     "start": "node server.js"
   },
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.9.3",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "nodemon": "^2.0.22",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-simplified-player": "^1.0.93",
-    "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "vite": "^4.2.1"
-  },
-  "main": "server.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "request": "^2.88.2"
+  }
 }

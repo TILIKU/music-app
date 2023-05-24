@@ -30,7 +30,8 @@ export const getSong = createApi({
     }),
     endpoints:(builder) =>({
         getSong:builder.query({
-            query: (musicTitle) => createRequest(`https://tiliku-server-musicapp-production.up.railway.app/${musicTitle}`)
+            // query: (musicTitle) => createRequest(`https://tiliku-server-musicapp-production.up.railway.app/${musicTitle}`) use this when i'll actually have a server 
+            query: (musicTitle) => createRequest(`https://api.deezer.com/search?q=${musicTitle}`)
             // query: (musicTitle) => createRequest(`http://localhost:3001/${musicTitle}`)
         }),
     })
