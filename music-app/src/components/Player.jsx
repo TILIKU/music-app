@@ -58,7 +58,8 @@ const Player = () => {
       </button>
       </form>
     </div>
-      <div className='card-container'>
+      {simplified ? 
+      <div className='card-container-one'>
         {searchObj?.data?.slice(0,10)?.map((song) => (
             <div className='card' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`,left:`${searchObj?.data.indexOf(song) * 9}%`}}>
               <div className='card-background'>
@@ -70,6 +71,21 @@ const Player = () => {
           </div>
         ))}
       </div>
+      :
+      <div className='card-container-two'>
+        {searchObj?.data?.slice(0,10)?.map((song) => (
+            <div className='card' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`,left:`${searchObj?.data.indexOf(song) * 9}%`}}>
+              <div className='card-background'>
+              <img src={song?.album?.cover_medium}></img>
+              <h2>{song?.title}</h2>
+              <h3>{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
+              <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
+            </div>
+          </div>
+        ))}
+      </div>
+      }
+
          
       
         <div className='player-container'>
