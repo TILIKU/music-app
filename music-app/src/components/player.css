@@ -82,16 +82,25 @@ input{
 .search-button:hover{
     border: 1px solid #fffffffb;
 }
-.card-container{
+.card-container-one{
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
     overflow: auto;
+    overflow-x: hidden;
 }
-.card{
-     
-    
+.card-container-two{
+    /* display:grid;
+    grid-template-columns: 5rem 10rem 20rem;
+    row-gap: 14px;
+    column-gap: 12px;
+    justify-content: center; */
+    display: grid;
+        grid: repeat(2, 60px) / auto-flow 80px;
+
+}
+.card-one{
     height:25rem;
     background-color: #726e6e30;
     /* border: 1px double #ff6600c9; */
@@ -106,11 +115,26 @@ input{
 
     position: absolute;
 }
+.card-two{
+    height:25rem;
+    background-color: #726e6e30;
+    /* border: 1px double #ff6600c9; */
+    border-radius: 10px;
+    overflow:visible;
+    font-size: 0.6rem;
+    display:flex;
+    padding: 0.8rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .card:hover{
     border: 1px solid #ff6600c9;
     z-index: 100 !important;
 }
-.card{
+.card-one,.card-two{
     --border-color: #ff6600c9; /* the border color */
     --border-thickness: 5px;    /* the border thickness*/
     --gap: 0.5px;     /* the gap on hover */
