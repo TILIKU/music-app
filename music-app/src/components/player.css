@@ -5,12 +5,15 @@ h3{
     overflow: hidden;
 }
 img{
-    grid-area:image;
     min-height: 13rem;
     min-width: 13rem;
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
+}
+.img-two{
+    height: 10rem;
+    width: 10rem;
 }
 button{
     grid-area:button;
@@ -87,28 +90,25 @@ input{
     justify-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
-    overflow: auto;
     overflow-x: hidden;
+    width: 100%;
 }
 .card-container-two{
-    /* display:grid;
-    grid-template-columns: 5rem 10rem 20rem;
+    display:grid;
+    grid-template-columns: 20rem 20rem 20rem 20rem 20rem;
     row-gap: 14px;
     column-gap: 12px;
-    justify-content: center; */
-    display: grid;
-        grid: repeat(2, 60px) / auto-flow 80px;
+    justify-content: center;
+    
 
 }
 .card-one{
     height:25rem;
-    background-color: #726e6e30;
     /* border: 1px double #ff6600c9; */
     border-radius: 10px;
     overflow:visible;
     font-size: 0.6rem;
     display:flex;
-    padding: 0.8rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -116,21 +116,19 @@ input{
     position: absolute;
 }
 .card-two{
-    height:25rem;
-    background-color: #726e6e30;
-    /* border: 1px double #ff6600c9; */
+    height:20rem;
+    border: 1px double #ff6600c9;
     border-radius: 10px;
     overflow:visible;
     font-size: 0.6rem;
     display:flex;
-    padding: 0.8rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
 
-.card:hover{
+.card-one:hover,.card-two:hover{
     border: 1px solid #ff6600c9;
     z-index: 100 !important;
 }
@@ -154,7 +152,7 @@ input{
 
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.card:hover{
+.card-one:hover,.card-two:hover{
     --_i: 100%;
   transition: .3s, background-size .3s .3s;
 
