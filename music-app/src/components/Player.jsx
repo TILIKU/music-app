@@ -81,7 +81,7 @@ const Player = () => {
             <div className='card-two' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`,}}>
               {/* <div className='card-background'> */}
               <img src={song?.album?.cover_small} className="img-two"></img>
-              <h2>{song?.title}</h2>
+              <h2>{song?.title.length > 35 ? `${song?.title.substring(0, 35)}...` : song?.title}</h2>
               <h3>{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
               <button className='select-song-button' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
               <h4>{song?.album?.title.length > 25 ? `${song?.album?.title.substring(0, 25)}...` : song?.album?.title}</h4>
