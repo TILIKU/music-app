@@ -24,6 +24,7 @@ img{
     height: 3rem;
     width: 3rem;
     grid-area: cover;
+    
 }
 button{
     grid-area:button;
@@ -32,6 +33,12 @@ button{
 }
 h2,h3,img,button{
     overflow: hidden;
+}
+.time{
+    grid-area:time;
+}
+.artist{
+    grid-area:artist;
 }
 
 /* .card-container{
@@ -130,12 +137,12 @@ input{
     align-items: center;
     align-content: center;
     border-radius: 10px;
-    overflow:visible;
     font-size: 0.6rem;
     display: grid;
     grid-template-areas:
-    "id cover title title title title title title artist time"
-    "id cover album album album album album album artist time";
+    "id cover title title title title title artist artist time"
+    "id cover album album album album album artist artist time";
+    grid-auto-columns: minmax(100px, auto);
 }
 
 .card-one{
