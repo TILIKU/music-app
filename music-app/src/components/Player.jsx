@@ -5,6 +5,8 @@ import "./player.css"
 import { useGetSongQuery } from '../services/songAPi'
 import { QueryStatus } from '@reduxjs/toolkit/dist/query'
 
+import Song from './Song'
+
 const Player = () => {
   
   const [searchWord, setsearchWord] = useState("")
@@ -76,12 +78,14 @@ const Player = () => {
         ))}
       </div>
       :
+      <div className='content'>
+      <Song/>
       <div className='card-container-two'>
         {searchObj?.data?.slice(0,8)?.map((song) => (
             <div className='card-two' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`,}}>
               {/* <div className='card-background'> */}
               <img src={song?.album?.cover_small} className="img-two"></img>
-              <h2 className="h2-two">{song?.title.length > 65 ? `${song?.title.substring(0, 65)}...` : song?.title}</h2>
+              <h2 className="h2-two">{song?.title.length > 50 ? `${song?.title.substring(0, 50)}...` : song?.title}</h2>
               <h3 className="h3-two">{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
               <button className='select-song-button-two' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
               <h4 className="artist-two">{song?.album?.title.length > 25 ? `${song?.album?.title.substring(0, 25)}...` : song?.album?.title}</h4>
@@ -90,10 +94,9 @@ const Player = () => {
           </div>
         ))}
       </div>
+      </div>
       }
 
-         
-      
         <div className='player-container'>
           <ReactSimplifiedPlayer 
           mainColor="#ff8400" 

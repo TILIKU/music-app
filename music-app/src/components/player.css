@@ -1,3 +1,7 @@
+.content{
+    display: flex;
+    flex-direction: row;
+}
 h2{
     grid-area: title;
     text-align: left;
@@ -68,7 +72,7 @@ h2,h3,img,button{
 }
 
 .search-container{
-    margin: 20px 0;
+    margin: 1rem 0 0.5rem  0;
     width: 100wh;
 }
 input{
@@ -99,18 +103,17 @@ input{
 }
 .select-song-button-two{
     border-radius:50%;
-    width:40px ;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     font-size: 1.5rem;
     padding: 0;
     background-image: url("../assets/play-icon-2-2-2.png");
-    background-size: 15px;
-    background-position: 56%;
+    background-size: 11px;
+    background-position: 57%;
     background-repeat: no-repeat;
     grid-area: id;
-    margin: auto;
-    
-    
+    margin: auto 1rem auto auto;
+    flex-grow: 1;
 }
 
 .select-song-button-two:hover{
@@ -146,6 +149,7 @@ input{
     flex-direction: column;
     justify-content: center;
    
+
 }
 .card-one{
     height:25rem;
@@ -162,6 +166,7 @@ input{
 }
 .card-two{
     height:4rem;
+    margin: auto 1rem;
     align-items: center;
     align-content: center;
     border-radius: 10px;
