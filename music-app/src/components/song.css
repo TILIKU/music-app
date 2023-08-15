@@ -1,7 +1,6 @@
 .container{
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    flex-grow:1 ;
+    background-color: rgba(169, 164, 159, 0.319);
+    border-radius: 3%;
     display: flex;
+    flex-direction: column;
 }

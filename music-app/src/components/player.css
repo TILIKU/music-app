@@ -112,7 +112,7 @@ input{
     background-position: 57%;
     background-repeat: no-repeat;
     grid-area: id;
-    margin: auto 1rem auto auto;
+    margin: auto 1.1rem auto auto;
     flex-grow: 1;
 }
 
@@ -148,7 +148,7 @@ input{
     display:flex;
     flex-direction: column;
     justify-content: center;
-   
+    flex:1;
 
 }
 .card-one{
@@ -166,7 +166,8 @@ input{
 }
 .card-two{
     height:4rem;
-    margin: auto 1rem;
+    width: 100%;
+    margin: auto 1rem auto auto;
     align-items: center;
     align-content: center;
     border-radius: 10px;

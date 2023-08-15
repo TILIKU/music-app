@@ -12,7 +12,7 @@ const Player = () => {
   const [searchWord, setsearchWord] = useState("")
   const [updated, setUpdated] = useState(searchWord)
   const [toogle, setToogle] = useState(false)
-  
+  const [chosenSong, setchosenSong] = useState([])
 
   const {data:searchObj, isFetching} = useGetSongQuery(updated)
 
@@ -27,7 +27,7 @@ const Player = () => {
 
   if(isFetching) return "loading..."
 
-  console.log(toogle)
+ 
   const searchButtonClicked = (event) =>{
     setUpdated(
       // "music/" + 
@@ -42,9 +42,11 @@ const Player = () => {
        song_artist: searchObj?.data?.[id]?.artist?.name.toString() || "",
        url: searchObj?.data?.[id]?.preview.toString() || "",}
     )
+    setchosenSong(searchObj?.data?.[id])
+    
       
   }
-  console.log(searchObj)
+  // console.log(searchObj)
 
   return (
     <>
@@ -79,7 +81,9 @@ const Player = () => {
       </div>
       :
       <div className='content'>
-      <Song/>
+      <Song
+       song={chosenSong}
+      />
       <div className='card-container-two'>
         {searchObj?.data?.slice(0,8)?.map((song) => (
             <div className='card-two' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`,}}>
