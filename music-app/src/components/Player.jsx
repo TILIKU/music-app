@@ -89,8 +89,10 @@ const Player = () => {
             <div className='card-two' key={song.id} id={song.id} style={{zIndex:`${searchObj?.data.indexOf(song)}`,}}>
               {/* <div className='card-background'> */}
               <img src={song?.album?.cover_small} className="img-two"></img>
-              <h2 className="h2-two">{song?.title.length > 50 ? `${song?.title.substring(0, 50)}...` : song?.title}</h2>
-              <h3 className="h3-two">{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
+              <div className='song-titles-two'>
+                <h2 className="h2-two">{song?.title.length > 50 ? `${song?.title.substring(0, 50)}...` : song?.title}</h2>
+                <h3 className="h3-two">{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
+              </div>
               <button className='select-song-button-two' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
               <h4 className="artist-two">{song?.album?.title.length > 25 ? `${song?.album?.title.substring(0, 25)}...` : song?.album?.title}</h4>
               <h4 className="time-two">{Math.floor(song?.duration / 60)}:{(song?.duration % 60) > 10 ? song?.duration % 60 : `0${song?.duration % 60}`}</h4>

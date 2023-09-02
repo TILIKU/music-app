@@ -13,16 +13,18 @@ h3{
     text-align: left;
 }
 .h2-two{
-    grid-area: title;
+    
     text-align: left;
+    margin: auto 0
 }
 .h3-two{
-    grid-area:album;
+
     opacity: 0.5;
     overflow: hidden;
     text-align: left;
+    margin: auto 0
 }
-h4{  
+.time-two{  
     opacity: 0.8;
     text-align: center;
     margin: auto;
@@ -52,6 +54,9 @@ h2,h3,img,button{
 }
 .artist-two{
     grid-area:artist;
+}
+.song-title-two{
+    grid-area:title
 }
 
 /* .card-container{
@@ -174,8 +179,7 @@ input{
     font-size: 0.6rem;
     display: grid;
     grid-template-areas:
-    "id cover title title title title title artist artist time"
-    "id cover album album album album album artist artist time";
+    "id cover title title title title title artist artist time";
     grid-template-columns: 70px 70px 5fr 2fr 1fr;
     grid-auto-columns: minmax(100px, auto);
 }

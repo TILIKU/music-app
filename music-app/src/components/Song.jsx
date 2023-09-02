@@ -13,9 +13,9 @@ const Song = (song) => {
         <>
             <div className='container'>
                 <img src={song?.song?.album?.cover_medium}></img>
-                <h2>{song?.song?.title}</h2>
-                <h3>{song?.song?.artist?.name.length > 25 ? `${song?.song?.artist?.name.substring(0, 25)}...` : song?.song?.artist?.name}</h3>
-                <h4 className="artist-two">{song?.song?.album?.title.length > 25 ? `${song?.song?.album?.title.substring(0, 25)}...` : song?.song?.album?.title}</h4>
+                <h2 className='title'>{song?.song?.title}</h2>
+                <h3 className='artist'>{song?.song?.artist?.name.length > 25 ? `${song?.song?.artist?.name.substring(0, 25)}...` : song?.song?.artist?.name}</h3>
+                <h4 className="album">{song?.song?.album?.title.length > 25 ? `${song?.song?.album?.title.substring(0, 25)}...` : song?.song?.album?.title}</h4>
             </div>
         </>
     )
