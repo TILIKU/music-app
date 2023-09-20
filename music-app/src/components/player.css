@@ -13,9 +13,9 @@ h3{
     text-align: left;
 }
 .h2-two{
-    
+
     text-align: left;
-    margin: auto 0
+    margin: auto 0;
 }
 .h3-two{
 
@@ -52,11 +52,12 @@ h2,h3,img,button{
 .time-two{
     grid-area:time;
 }
-.artist-two{
-    grid-area:artist;
+.album-two{
+    grid-area:album;
 }
-.song-title-two{
-    grid-area:title
+.song-titles-two{
+    grid-area:title;
+    margin-left:0.4rem;
 }
 
 /* .card-container{
@@ -77,8 +78,15 @@ h2,h3,img,button{
 }
 
 .search-container{
-    margin: 1rem 0 0.5rem  0;
-    width: 100wh;
+    margin: 0.5rem 0 0.5rem  0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 input{
     padding-left: 10px;
@@ -102,22 +110,38 @@ input{
     margin: auto;
     
 }
+.change-layout{
+    width: 30px;
+    height: 40px;
+    border-radius: 50px;
+    margin-left: 20px;
+    top: 5px;
+    background-image: url("../assets/search-icon-white.png");
+    background-size: 20px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    color: white;
+    border: 1px solid #a1a1a133;
+}
+.change-layout:hover{
+    border: 1px solid #fffffffb;
+}
 
 .select-song-button:hover{
     border-color: #c3bfbf;
 }
 .select-song-button-two{
     border-radius:50%;
-    width: 24px;
-    height: 24px;
+    width: 2rem;
+    height: 2rem;
     font-size: 1.5rem;
     padding: 0;
     background-image: url("../assets/play-icon-2-2-2.png");
-    background-size: 11px;
-    background-position: 57%;
+    background-size: 0.78rem;
+    background-position: 60%;
     background-repeat: no-repeat;
     grid-area: id;
-    margin: auto 1.1rem auto auto;
+    margin: auto auto auto 2rem ;
     flex-grow: 1;
 }
 
@@ -125,12 +149,10 @@ input{
     border-color: #c3bfbf;
 }
 .search-button{
-    width: 30px;
+    width: 40px;
     height: 40px;
     border-radius: 50px;
-    margin-left: 20px;
-    position: relative;
-    top: 5px;
+    margin-right: 20px;
     background-image: url("../assets/search-icon-white.png");
     background-size: 20px;
     background-position: 50%;
@@ -154,7 +176,8 @@ input{
     flex-direction: column;
     justify-content: center;
     flex:1;
-
+    background-color: rgba(169, 164, 159, 0.137);
+    border-radius: 10px;
 }
 .card-one{
     height:25rem;
@@ -172,16 +195,17 @@ input{
 .card-two{
     height:4rem;
     width: 100%;
-    margin: auto 1rem auto auto;
+    margin: 0.15rem auto 0.15rem 0.4rem;
     align-items: center;
     align-content: center;
     border-radius: 10px;
     font-size: 0.6rem;
     display: grid;
     grid-template-areas:
-    "id cover title title title title title artist artist time";
+    "id cover title title title title title album album time";
     grid-template-columns: 70px 70px 5fr 2fr 1fr;
     grid-auto-columns: minmax(100px, auto);
+    background-color: rgba(169, 164, 159, 0.086);
 }
 
 .card-one{

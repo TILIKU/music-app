@@ -51,20 +51,25 @@ const Player = () => {
   return (
     <>
     <div className='search-container'>
-      <form onSubmit={searchButtonClicked}>
-      <input 
-        value={searchWord} 
-        onChange={(e) => {setsearchWord(e.target.value)}}
-        placeholder='Search'
-      />
+      <form 
+        onSubmit={searchButtonClicked}
+        className='form'
+      >
       <button
         type='submit'  
         className='search-button' // trim search word from spaces
       > 
       </button>
+      <input 
+        value={searchWord} 
+        onChange={(e) => {setsearchWord(e.target.value)}}
+        placeholder='Search'
+      />
+      
+      <button className='change-layout' onClick={() => setToogle(!toogle)}></button>
       </form>
     </div>
-      <button className='select-song-button' onClick={() => setToogle(!toogle)}></button>
+      
       {toogle ? 
       <div className='card-container-one'>
         {searchObj?.data?.slice(0,9)?.map((song) => (
@@ -94,7 +99,7 @@ const Player = () => {
                 <h3 className="h3-two">{song?.artist?.name.length > 25 ? `${song?.artist?.name.substring(0, 25)}...` : song?.artist?.name}</h3>
               </div>
               <button className='select-song-button-two' onClick={() => chosenSongButtonClicked(searchObj?.data?.indexOf(song))}></button>
-              <h4 className="artist-two">{song?.album?.title.length > 25 ? `${song?.album?.title.substring(0, 25)}...` : song?.album?.title}</h4>
+              <h4 className="album-two">{song?.album?.title.length > 25 ? `${song?.album?.title.substring(0, 25)}...` : song?.album?.title}</h4>
               <h4 className="time-two">{Math.floor(song?.duration / 60)}:{(song?.duration % 60) > 10 ? song?.duration % 60 : `0${song?.duration % 60}`}</h4>
             {/* </div> */}
           </div>

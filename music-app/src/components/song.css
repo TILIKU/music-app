@@ -1,18 +1,27 @@
 .container{
-    background-color: rgba(169, 164, 159, 0.319);
+    background-color: rgba(169, 164, 159, 0.137);
     border-radius: 3%;
     display: flex;
     flex-direction: column;
+    margin-right: 1rem;
+    min-width: 22rem;
 }
 img{
     margin: 1rem;
+    max-width: 20rem;
+    max-height: 20rem;
 }
 .title{
     text-align: center;
+    font-weight: 500;
 }
 .artist{
     text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
 }
 .album{
-    text-align:center
+    text-align:center;
+    font-weight: 300;
+    font-size: 0.8rem;
 }
