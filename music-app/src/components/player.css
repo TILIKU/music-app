@@ -46,7 +46,7 @@ button{
     font-size:2rem;
 
 }
-h2,h3,img,button{
+h2,h3,button{
     overflow: hidden;
 }
 .time-two{
@@ -111,17 +111,21 @@ input{
     
 }
 .change-layout{
-    width: 30px;
+    width: 40px;
     height: 40px;
     border-radius: 50px;
     margin-left: 20px;
     top: 5px;
-    background-image: url("../assets/search-icon-white.png");
-    background-size: 20px;
-    background-position: 50%;
-    background-repeat: no-repeat;
+    
     color: white;
     border: 1px solid #a1a1a133;
+}
+.line{
+    display:block;
+    height: 4px;
+    width: 2rem;
+    border-radius: 10px;
+    background: #0e2431;
 }
 .change-layout:hover{
     border: 1px solid #fffffffb;

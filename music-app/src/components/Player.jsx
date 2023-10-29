@@ -16,7 +16,7 @@ const Player = () => {
 
   const {data:searchObj, isFetching} = useGetSongQuery(updated)
 
-  const [playerSong, setplayerSong] = useState({song_cover: searchObj?.data?.[0]?.album?.cover.toString() || "",
+  const [playerSong, setplayerSong] = useState({song_cover: searchObj?.data?.[0]?.album?.cover || "",
                                                 song_title: searchObj?.data?.[0]?.title.toString() || "",
                                                 id: searchObj?.data?.[0]?.id.toString() || "",
                                                 song_artist: searchObj?.data?.[0]?.artist?.name.toString() || "",
@@ -66,7 +66,11 @@ const Player = () => {
         placeholder='Search'
       />
       
-      <button className='change-layout' onClick={() => setToogle(!toogle)}></button>
+      <button className='change-layout' onClick={() => setToogle(!toogle)}>
+        <span className='line line1'></span>
+        <span className='line line2'></span>
+        <span className='line line3'></span>
+      </button>
       </form>
     </div>
       

@@ -5,6 +5,7 @@
     flex-direction: column;
     margin-right: 1rem;
     min-width: 22rem;
+    overflow-x:hidden;
 }
 img{
     margin: 1rem;
